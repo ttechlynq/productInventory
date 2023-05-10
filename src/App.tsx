@@ -1,26 +1,21 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+// import { Outlet } from "react-router-dom";
+import { Header } from "./Header";
+// import { useReducer } from "react";
+// import { Header } from "./Header";
+import { Main } from "./Main";
+import { AppProvider } from "./appContext";
+import { ProductsPage } from "./pages/ProductsPage";
+import { ProductPage } from "./pages/productPage";
 
-function App() {
+export default function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className="max-w-7x1 mx-auto px-4">
+      <AppProvider>
+        <Header />
+        <Main />
+        <ProductsPage />
+        <ProductPage />
+      </AppProvider>
     </div>
   );
 }
-
-export default App;
